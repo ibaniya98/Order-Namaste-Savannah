@@ -1,0 +1,1858 @@
+[
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5dfda36332f5d363746453d1",
+      "itemName": "Masala Papad",
+      "category": "Starters",
+      "description": "Cripsy crackers made from lentils, topped with onions, tomatoes, cilantro, and spices",
+      "options": [
+        {
+          "_id": "5dfda36332f5d363746453d2",
+          "price": 4.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593369438363_7.jpg",
+        "key": "menu/1593369438363_7.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5dfda3e56f89ed467c3cdaa3",
+      "itemName": "Steamed Mo:Mo",
+      "category": "Momo",
+      "description": "Homemade dumplings filled with mixed veg. and your choice of meat. Served with traditional tomato sauce.",
+      "imageUrl": "/img/food/6.jpg",
+      "options": [
+        {
+          "_id": "5ef8e35f0d200900075589e4",
+          "price": 9.99,
+          "title": "Veg"
+        },
+        {
+          "_id": "5ef8e35f0d200900075589e3",
+          "price": 11.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ef8e35f0d200900075589e2",
+          "price": 14.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593371242121_samosa.jpg",
+        "key": "menu/1593371242121_samosa.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5dfda4f9777e4b24a877af99",
+      "itemName": "Vegetable Samosa",
+      "category": "Appetizers",
+      "description": "Subtly seasoned potatoes and green peas wrapped in crispy deep-fried pastries.",
+      "options": [
+        {
+          "_id": "5ef8ea6a0d200900075589f2",
+          "price": 6.99,
+          "title": "Vegetable"
+        }
+      ],
+      "__v": 0,
+      "imageUrl": ""
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": [
+          {
+            "_id": "5ef8e264110db20007427db5",
+            "title": "Add Chicken",
+            "price": 2.5
+          }
+        ]
+      },
+      "_id": "5dfdb04ec5ea576620599cd4",
+      "itemName": "Garden / Cucumber Salad",
+      "category": "Salad",
+      "description": "Lettuce, Cucumber, Onions, Carrots, and Tomatoes with House Dressing.",
+      "options": [
+        {
+          "_id": "5ef8e264110db20007427db4",
+          "price": 8.99,
+          "title": ""
+        }
+      ],
+      "__v": 0,
+      "imageUrl": ""
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593371272461_chaat.jpg",
+        "key": "menu/1593371272461_chaat.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5dfdbeb27b70ed61981acb68",
+      "itemName": "Samosa Chaat",
+      "category": "Appetizers",
+      "description": "Shallow Fried Samosa served with chick peas topped with fresh onions, tomatoes, chutney, and yogurt.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8ea890d200900075589f3",
+          "price": 8.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5dfe5124ef47d225744f3599",
+      "itemName": "Aloo Tikki",
+      "category": "Starters",
+      "description": "Boiled potatoes, peas, and various curry spices topped with yogurt.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5dfe5124ef47d225744f359a",
+          "price": 6.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a5f18ebde1700074c0817",
+      "itemName": "Lamb Samosa",
+      "category": "Appetizers",
+      "description": "Ground, seasoned Lamb with green peas wrapped in crispy deep-fried pastries.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed16f5b467eff0008ce8610",
+          "price": 8.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a60c8ebde1700074c081b",
+      "itemName": "Pakora",
+      "category": "Starters",
+      "description": "Lightly Battered and fried with spices, served with chutney.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a60c8ebde1700074c081f",
+          "price": 6.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5e1a60c8ebde1700074c081e",
+          "price": 7.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5e1a60c8ebde1700074c081d",
+          "price": 9.99,
+          "title": "Paneer"
+        },
+        {
+          "_id": "5e1a60c8ebde1700074c081c",
+          "price": 9.99,
+          "title": "Fish"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a61ceebde1700074c0820",
+      "itemName": "Pani Puri",
+      "category": "Starters",
+      "description": "Round hallow Puri, filled with veg mix served with tangy (imili) flavored water",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a61ceebde1700074c0821",
+          "price": 6.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6200ebde1700074c0822",
+      "itemName": "Chilli Paneer",
+      "category": "Appetizers",
+      "description": "Deep-fried cheese cubes tossed with fresh onions and bell peppers.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed16fb7467eff0008ce8611",
+          "price": 14.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593370458262_chicken_chilli.jpg",
+        "key": "menu/1593370458262_chicken_chilli.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a625b148bb20007de6f6d",
+      "itemName": "Chilli Chicken",
+      "category": "Appetizers",
+      "description": "Seasoned, marinated boneless chicken cubes tossed with onions and bell peppers",
+      "imageUrl": "/img/home/item2.png",
+      "options": [
+        {
+          "_id": "5ef8e75b110db20007427dbf",
+          "price": 12.99,
+          "title": "Chicken"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593371398261_choyela.jpg",
+        "key": "menu/1593371398261_choyela.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6288148bb20007de6f6f",
+      "itemName": "Chhoyela",
+      "category": "Starters",
+      "description": "Boiled chicken tossed in mustered oil and orthodox Nepali spices",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8eb070d200900075589f6",
+          "price": 8.99,
+          "title": "Chicken"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a62c4148bb20007de6f71",
+      "itemName": "Sekuwa",
+      "category": "Starters",
+      "description": "Rosted meat in traditional oven, mixed with natural hurbs and spice.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a90ca32d2aa565882f227",
+          "price": 8.95,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5e1a90ca32d2aa565882f226",
+          "price": 10.95,
+          "title": "Lamb"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a62ea148bb20007de6f74",
+      "itemName": "Veggie Platter",
+      "category": "Starters",
+      "description": "Combo of veggie starters",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a62ea148bb20007de6f75",
+          "price": 14.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a63a9148bb20007de6f79",
+      "itemName": "Chicken Salad",
+      "category": "Salad",
+      "description": "Grilled Chicken, lettuce, onions, carrots and tomatoes with House dressing.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed16e68467eff0008ce860c",
+          "price": 11.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593369467077_4.jpg",
+        "key": "menu/1593369467077_4.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a64b9148bb20007de6f7b",
+      "itemName": "Kothe Momo",
+      "category": "Momo",
+      "description": "Lightly pan-fried juicy dumplings filled with mixed veg. and your choice of meat. Served with traditional tomato sauce.",
+      "imageUrl": "/img/food/4.jpg",
+      "options": [
+        {
+          "_id": "5ef8e37b0d200900075589e7",
+          "price": 9.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ef8e37b0d200900075589e6",
+          "price": 11.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ef8e37b0d200900075589e5",
+          "price": 14.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593369509860_8.jpg",
+        "key": "menu/1593369509860_8.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a64fa148bb20007de6f7f",
+      "itemName": "Chilli Momo",
+      "category": "Momo",
+      "description": "Fried dumplings filled with mixed veg. and choice of your meat sautéed over homemade chili sauce, sliced bell peppers and onions. Served with traditional tomato sauce.",
+      "imageUrl": "/img/food/8.jpg",
+      "options": [
+        {
+          "_id": "5ef8e3a60d200900075589ea",
+          "price": 9.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ef8e3a60d200900075589e9",
+          "price": 11.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ef8e3a60d200900075589e8",
+          "price": 14.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a652b148bb20007de6f83",
+      "itemName": "Deep-Fried Momo",
+      "category": "Momo",
+      "description": "Deep-fried dumplings filled with mixed veg. and your choice of meat. Served with traditional tomato sauce.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17151467eff0008ce8620",
+          "price": 9.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ed17151467eff0008ce861f",
+          "price": 11.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed17151467eff0008ce861e",
+          "price": 14.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593369319522_1.jpg",
+        "key": "menu/1593369319522_1.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a66b2ebde1700074c0828",
+      "itemName": "Tandoori Chicken",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Bone-in chicken marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "/img/food/1.jpg",
+      "options": [
+        {
+          "_id": "5ef8e2e80d200900075589e1",
+          "price": 15.99,
+          "title": "Chicken"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a66e1ebde1700074c082a",
+      "itemName": "Chicken Tikka",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Boneless chicken marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17265467eff0008ce8624",
+          "price": 15.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6710ebde1700074c082c",
+      "itemName": "Seekh Kebab",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Ground lamb marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17287467eff0008ce8625",
+          "price": 18.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a674cebde1700074c082e",
+      "itemName": "Namaste Shrimp",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Tail on Jumbo Shrimps marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed171ab467eff0008ce8621",
+          "price": 18.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6797ebde1700074c0832",
+      "itemName": "Namaste Fish",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Salmon marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed171c5467eff0008ce8622",
+          "price": 18.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a67b2ebde1700074c0834",
+      "itemName": "Mixed Platter",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "All your favorite tandoor - Tandoori Chicken, Chicken Tikka, Seekh Kebab, Lamb Kebab, Kathmandu Chicken. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17323467eff0008ce8628",
+          "price": 26.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a67ccebde1700074c0836",
+      "itemName": "Kathmandu Chicken",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed172c7467eff0008ce8626",
+          "price": 15.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6966ebde1700074c0838",
+      "itemName": "Traditional Nepalese Curry Bowl",
+      "category": "Bowl",
+      "description": "Traditional Nepali curry served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed1743e467eff0008ce8634",
+          "price": 12.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed1743e467eff0008ce8633",
+          "price": 15.99,
+          "title": "Boneless Lamb Cubes"
+        },
+        {
+          "_id": "5ed1743e467eff0008ce8632",
+          "price": 12.99,
+          "title": "Mix Vegetables"
+        },
+        {
+          "_id": "5ed1743e467eff0008ce8631",
+          "price": 14.99,
+          "title": "Paneer"
+        },
+        {
+          "_id": "5ed1743e467eff0008ce8630",
+          "price": 16.99,
+          "title": "Shrimp"
+        },
+        {
+          "_id": "5ed1743e467eff0008ce862f",
+          "price": 16.99,
+          "title": "Fish (Salmon Cubes)"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a69faebde1700074c083d",
+      "itemName": "Tikka Masala",
+      "category": "Bowl",
+      "description": "Onion and tomato base creamy sauce with your choice of protein served with Basmati rice and house veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed174a6467eff0008ce863a",
+          "price": 15.99,
+          "title": "Paneer"
+        },
+        {
+          "_id": "5ed174a6467eff0008ce8639",
+          "price": 14.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed174a6467eff0008ce8638",
+          "price": 16.99,
+          "title": "Boneless Lamb Cubes"
+        },
+        {
+          "_id": "5ed174a6467eff0008ce8637",
+          "price": 17.99,
+          "title": "Fish (Salmon Cubes)"
+        },
+        {
+          "_id": "5ed174a6467eff0008ce8636",
+          "price": 17.99,
+          "title": "Shrimp"
+        },
+        {
+          "_id": "5ed174a6467eff0008ce8635",
+          "price": 12.99,
+          "title": "Mix Vegetables"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6a60ebde1700074c0843",
+      "itemName": "Korma",
+      "category": "Bowl",
+      "description": "Cashew based creamy sauce with your choice of protein. Served with Basmati rice and house veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17537467eff0008ce8640",
+          "price": 14.99,
+          "title": "Panner"
+        },
+        {
+          "_id": "5ed17537467eff0008ce863f",
+          "price": 14.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed17537467eff0008ce863e",
+          "price": 16.99,
+          "title": "Lamb"
+        },
+        {
+          "_id": "5ed17537467eff0008ce863d",
+          "price": 16.99,
+          "title": "Fish"
+        },
+        {
+          "_id": "5ed17537467eff0008ce863c",
+          "price": 16.99,
+          "title": "Shrimp"
+        },
+        {
+          "_id": "5ed17537467eff0008ce863b",
+          "price": 11.99,
+          "title": "Mix Vegetables"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6ac0ebde1700074c0849",
+      "itemName": "Saag",
+      "category": "Bowl",
+      "description": "Creamy Spinach Puree served with Basmati rice, house veggies and your choice of protein.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17585467eff0008ce8646",
+          "price": 14.99,
+          "title": "Panner"
+        },
+        {
+          "_id": "5ed17585467eff0008ce8645",
+          "price": 12.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed17585467eff0008ce8644",
+          "price": 16.99,
+          "title": "Lamb"
+        },
+        {
+          "_id": "5ed17585467eff0008ce8643",
+          "price": 16.99,
+          "title": "Fish"
+        },
+        {
+          "_id": "5ed17585467eff0008ce8642",
+          "price": 16.99,
+          "title": "Shrimp"
+        },
+        {
+          "_id": "5ed17585467eff0008ce8641",
+          "price": 11.99,
+          "title": "Mix Vegetables"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6b2cebde1700074c084f",
+      "itemName": "Vindaloo",
+      "category": "Bowl",
+      "description": "Potato and your choice of protein with lightly tangy sauce served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed175f1467eff0008ce8652",
+          "price": 14.99,
+          "title": "Panner"
+        },
+        {
+          "_id": "5ed175f1467eff0008ce8651",
+          "price": 14.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed175f1467eff0008ce8650",
+          "price": 16.99,
+          "title": "Lamb"
+        },
+        {
+          "_id": "5ed175f1467eff0008ce864f",
+          "price": 16.99,
+          "title": "Fish"
+        },
+        {
+          "_id": "5ed175f1467eff0008ce864e",
+          "price": 16.99,
+          "title": "Shrimp"
+        },
+        {
+          "_id": "5ed175f1467eff0008ce864d",
+          "price": 11.99,
+          "title": "Mix Vegetables"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6bb0ebde1700074c085b",
+      "itemName": "Namaste Okra",
+      "category": "Veggie Bowl",
+      "description": "Fresh okra pan tossed with Namaste flavor",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17bda9cf6e600076714ca",
+          "price": 14.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6beeebde1700074c085d",
+      "itemName": "Chana Masala",
+      "category": "Veggie Bowl",
+      "description": "Chick peas cooked with spices served with Basmati Rice and House Veggies",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17bab9cf6e600076714c7",
+          "price": 12.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6c73148bb20007de6f87",
+      "itemName": "Eggplant Masala",
+      "category": "Veggie Bowl",
+      "description": "Baby eggplant cooked with creamy tomato sauce. Served with Basmati Rice and House Veggies",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17c189cf6e600076714cd",
+          "price": 14.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6ca4148bb20007de6f89",
+      "itemName": "Aloo Gobi",
+      "category": "Veggie Bowl",
+      "description": "Potato and cauliflower curry served with Basmati Rice and House Veggies",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17b939cf6e600076714c6",
+          "price": 12.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6ccb148bb20007de6f8b",
+      "itemName": "Mutter Paneer",
+      "category": "Veggie Bowl",
+      "description": "Green Peas and Paneer in a tomato based sauce with garam masala. Served with Basmati Rice and House Veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17c569cf6e600076714cf",
+          "price": 14.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6ce9148bb20007de6f8d",
+      "itemName": "Dal Makhani",
+      "category": "Veggie Bowl",
+      "description": "Black lentils and beans cooked with butter and simmered with spices. Served with Basmati Rice and House Veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17c329cf6e600076714ce",
+          "price": 12.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6d11148bb20007de6f8f",
+      "itemName": "Tadka Dal",
+      "category": "Veggie Bowl",
+      "description": "Yellow lentils simmered with spices. Served with Basmati Rice and House Veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17c979cf6e600076714d0",
+          "price": 11.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593370518261_chatamari.jpg",
+        "key": "menu/1593370518261_chatamari.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6dc7ebde1700074c085f",
+      "itemName": "Chatamari",
+      "category": "Nepalese Fusion",
+      "description": "Rice flour creepe topped with mixed veg. black-eyed peas, fried-egg, cheese and your choice of protein.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8e7970d200900075589f1",
+          "price": 10.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ef8e7970d200900075589f0",
+          "price": 11.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ef8e7970d200900075589ef",
+          "price": 14.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6e86ebde1700074c0863",
+      "itemName": "Woh (Bara)",
+      "category": "Nepalese Fusion",
+      "description": "Black Lentil cake stuffed with meat and topped with fried egg and cheese",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17730467eff0008ce8661",
+          "price": 10.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ed17730467eff0008ce8660",
+          "price": 11.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ed17730467eff0008ce865f",
+          "price": 14.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593369546159_11.jpg",
+        "key": "menu/1593369546159_11.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6eb5ebde1700074c0867",
+      "itemName": "Chow Mein",
+      "category": "Nepalese Fusion",
+      "description": "Thick noodles stir-fried with mixed veg. and choice of meat",
+      "imageUrl": "/img/food/11.jpg",
+      "options": [
+        {
+          "_id": "5ef8e3cb0d200900075589ee",
+          "price": 10.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ef8e3cb0d200900075589ed",
+          "price": 12.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ef8e3cb0d200900075589ec",
+          "price": 15.99,
+          "title": "Shrimp"
+        },
+        {
+          "_id": "5ef8e3cb0d200900075589eb",
+          "price": 15.99,
+          "title": "Bison"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593370367964_fried_rice.jpg",
+        "key": "menu/1593370367964_fried_rice.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6eeeebde1700074c086a",
+      "itemName": "Fried Rice",
+      "category": "Nepalese Fusion",
+      "description": "Basmati rice fried with mixed veg. and choice of meat",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8e701110db20007427dbd",
+          "price": 10.99,
+          "title": "Veggie"
+        },
+        {
+          "_id": "5ef8e701110db20007427dbc",
+          "price": 12.99,
+          "title": "Chicken"
+        },
+        {
+          "_id": "5ef8e701110db20007427dbb",
+          "price": 15.99,
+          "title": "Bison"
+        },
+        {
+          "_id": "5ef8e701110db20007427dba",
+          "price": 15.99,
+          "title": "Shrimp"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593371533363_snapper.jpg",
+        "key": "menu/1593371533363_snapper.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6f1eebde1700074c086d",
+      "itemName": "Whole Red Snapper / Sea Bass",
+      "category": "Chef's Special",
+      "description": "Baked and served with house salad, vegetables, bread, and dessert or fruits. Serves two people. Price may fluctuate based on the day&#39;s market price.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8eb8d0d200900075589f7",
+          "price": 26.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6f3eebde1700074c086f",
+      "itemName": "Sautee Shrimp",
+      "category": "Chef's Special",
+      "description": "Jumbo shrimp sautéed in garlic and tomato sauce served with vegetables and bread.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed178969dff210007834aa9",
+          "price": 18.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6f66ebde1700074c0871",
+      "itemName": "House Fries",
+      "category": "Kids Corner",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17e239cf6e600076714dd",
+          "price": 2.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6f7bebde1700074c0873",
+      "itemName": "Grill Cheese",
+      "category": "Kids Corner",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17e189cf6e600076714dc",
+          "price": 5.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": [
+          {
+            "_id": "5ef8ead10d200900075589f5",
+            "title": "Add Chicken",
+            "price": 2
+          }
+        ]
+      },
+      "_id": "5e1a6f8debde1700074c0875",
+      "itemName": "Plain Noodles",
+      "category": "Kids Corner",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8ead10d200900075589f4",
+          "price": 8.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6fa2ebde1700074c0877",
+      "itemName": "Chicken Nuggets",
+      "category": "Kids Corner",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17e319cf6e600076714de",
+          "price": 6.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a6fd4ebde1700074c087b",
+      "itemName": "Rice",
+      "category": "Sides",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a6fd4ebde1700074c087c",
+          "price": 3,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a700bebde1700074c087d",
+      "itemName": "Onions and Chili",
+      "category": "Sides",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17af69cf6e600076714c2",
+          "price": 2.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7023ebde1700074c087f",
+      "itemName": "Saag",
+      "category": "Sides",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17b039cf6e600076714c3",
+          "price": 5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7040ebde1700074c0881",
+      "itemName": "Steam Veggies",
+      "category": "Sides",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17b169cf6e600076714c4",
+          "price": 3.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7096148bb20007de6f91",
+      "itemName": "House yogurt",
+      "category": "Sides",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17b259cf6e600076714c5",
+          "price": 3,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7104ebde1700074c0885",
+      "itemName": "Plain Naan",
+      "category": "Bread",
+      "description": "Bread cooked in Clay Oven.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed1792c9dff210007834ab0",
+          "price": 2.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "image": {
+        "location": "https://namaste-savannah-photos.s3.amazonaws.com/menu/1593370404223_garlic_naan.jpg",
+        "key": "menu/1593370404223_garlic_naan.jpg"
+      },
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7136ebde1700074c0887",
+      "itemName": "Garlic Naan",
+      "category": "Bread",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ef8e725110db20007427dbe",
+          "price": 3.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7154ebde1700074c0889",
+      "itemName": "Plain Paratha",
+      "category": "Bread",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17a2e9dff210007834aba",
+          "price": 4.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7195148bb20007de6f93",
+      "itemName": "Onion Naan (Kulcha)",
+      "category": "Bread",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed1798c9dff210007834ab2",
+          "price": 4.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a721c148bb20007de6f97",
+      "itemName": "Chilli Naan",
+      "category": "Bread",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed179a49dff210007834ab3",
+          "price": 4.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7234148bb20007de6f99",
+      "itemName": "Keema Naan",
+      "category": "Bread",
+      "description": "Naan filled with ground lamb.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed179ee9dff210007834ab7",
+          "price": 6.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7261ebde1700074c088d",
+      "itemName": "Aloo Paratha",
+      "category": "Bread",
+      "description": "Paratha made from wheat and potato",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17a689dff210007834abb",
+          "price": 5.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a72e6ebde1700074c088f",
+      "itemName": "Kheer (Rice Pudding)",
+      "category": "Dessert",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a72e6ebde1700074c0890",
+          "price": 6.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a733debde1700074c0891",
+      "itemName": "Assorted Fruits",
+      "category": "Dessert",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a733debde1700074c0892",
+          "price": 5.95,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a734febde1700074c0893",
+      "itemName": "Fruit custard",
+      "category": "Dessert",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a734febde1700074c0894",
+          "price": 7.95,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a7376ebde1700074c0895",
+      "itemName": "Gazar Halwa",
+      "category": "Dessert",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a7376ebde1700074c0896",
+          "price": 6.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a738bebde1700074c0897",
+      "itemName": "Gulab jamun",
+      "category": "Dessert",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a738bebde1700074c0898",
+          "price": 5.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5e1a73a1ebde1700074c0899",
+      "itemName": "Rasmalai",
+      "category": "Dessert",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5e1a73a1ebde1700074c089a",
+          "price": 5.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed16d91467eff0008ce8602",
+      "itemName": "Mix Bean Soup (Quanti)",
+      "category": "Soup",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed16d91467eff0008ce8603",
+          "price": 7.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed16da6467eff0008ce8604",
+      "itemName": "Lentil Soup",
+      "category": "Soup",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed16da6467eff0008ce8605",
+          "price": 8.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed16dd1467eff0008ce8606",
+      "itemName": "Thuppa",
+      "category": "Soup",
+      "description": "Thick noodle soup with Chicken",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed16dd1467eff0008ce8607",
+          "price": 10.99,
+          "title": "Chicken"
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17079467eff0008ce8613",
+      "itemName": "Chili - Coconut Shrimp",
+      "category": "Appetizers",
+      "description": "Season, deep-fried shrimp tossed with chili or coconut sauce.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17079467eff0008ce8614",
+          "price": 16.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed173bf467eff0008ce8629",
+      "itemName": "Veggie Biryani",
+      "category": "Biryani",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17d899cf6e600076714d3",
+          "price": 12.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed178d49dff210007834aaa",
+      "itemName": "Red Snapper Fillet",
+      "category": "Chef's Special",
+      "description": "Served with vegetables and bread.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed178d49dff210007834aab",
+          "price": 24.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed178fd9dff210007834aac",
+      "itemName": "Soft Shell Crab Dinner",
+      "category": "Chef's Special",
+      "description": "Served with vegetables and bread.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed178fd9dff210007834aad",
+          "price": 24.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed179149dff210007834aae",
+      "itemName": "Soft Shell Crab Appetizer",
+      "category": "Chef's Special",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed179149dff210007834aaf",
+          "price": 14.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed179c39dff210007834ab5",
+      "itemName": "Cheese Naan",
+      "category": "Bread",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed179c39dff210007834ab6",
+          "price": 5.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17a1c9dff210007834ab8",
+      "itemName": "Roti",
+      "category": "Bread",
+      "description": "Plain bread made from wheat",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17a1c9dff210007834ab9",
+          "price": 2.5,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17bc69cf6e600076714c8",
+      "itemName": "Mix Vegetables",
+      "category": "Veggie Bowl",
+      "description": "Served with Basmati Rice and House Veggies",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17bc69cf6e600076714c9",
+          "price": 12.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17bf39cf6e600076714cb",
+      "itemName": "Tofu Curry",
+      "category": "Veggie Bowl",
+      "description": "Served with Basmati Rice and House Veggies",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17bf39cf6e600076714cc",
+          "price": 12.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17d4a9cf6e600076714d1",
+      "itemName": "Lamb Kebab",
+      "category": "The Clay Oven (Tandoor)",
+      "description": "Ground lamb in cubes marinated with yogurt, ginger, garlic, natural spices and braised in clay oven. Served with Basmati rice and House veggies.",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17d4a9cf6e600076714d2",
+          "price": 18.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17d9c9cf6e600076714d4",
+      "itemName": "Chicken Biryani",
+      "category": "Biryani",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17d9c9cf6e600076714d5",
+          "price": 15.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17daa9cf6e600076714d6",
+      "itemName": "Lamb Biryani",
+      "category": "Biryani",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17daa9cf6e600076714d7",
+          "price": 17.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17dbb9cf6e600076714d8",
+      "itemName": "Shrimp Biryani",
+      "category": "Biryani",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17dbb9cf6e600076714d9",
+          "price": 17.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "modifiers": {
+        "multiSelect": false,
+        "values": []
+      },
+      "_id": "5ed17df19cf6e600076714da",
+      "itemName": "Namaste Mix Biryani",
+      "category": "Biryani",
+      "description": "",
+      "imageUrl": "",
+      "options": [
+        {
+          "_id": "5ed17df19cf6e600076714db",
+          "price": 19.99,
+          "title": ""
+        }
+      ],
+      "__v": 0
+    }
+  ]

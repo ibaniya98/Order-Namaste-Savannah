@@ -1,0 +1,29 @@
+:root {
+    --img-placeholder-height: 200px;
+}
+
+.menu-item.ant-card-bordered {
+    border-radius: 15px !important;
+}
+
+.menu-item .ant-card-cover {
+    height: var(--img-placeholder-height);
+}
+
+.menu-item .ant-card-cover > img {
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.menu-item .ant-skeleton-header {
+    padding: 0;   
+}
+
+.menu-item .ant-skeleton-avatar {
+    width: 100% !important;
+    border-radius: 0 !important; 
+    padding-top: var(--img-placeholder-height);
+}
