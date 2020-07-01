@@ -2,6 +2,8 @@ import React from 'react';
 import { Badge, Popover, Button, message } from 'antd'
 import { ShoppingCartOutlined } from '@ant-design/icons';
 
+import CartUtil from '../../util/cart';
+
 const ShoppingCartIcon = (props) => {
     let totalItems = props.cart.reduce((total, item) => {
         return total + item.quantity
@@ -20,7 +22,7 @@ const ShoppingCartIcon = (props) => {
 
 const CartSummary = (props) => {
     const total = props.cart.reduce((total, currentItem) => {
-        return total + (currentItem.quantity * currentItem.selectedOption.price)
+        return total + CartUtil.getItemSubTotal(currentItem.quantity, currentItem.selectedOption, currentItem.selectedModifiers);
     }, 0);
 
     if (props.totalItems === 0) {

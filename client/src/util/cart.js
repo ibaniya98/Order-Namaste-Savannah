@@ -31,4 +31,13 @@ const setCart = (items) => {
     return items;
 }
 
-export default { initializeCart, setCart, getCartItems };
+const getItemSubTotal = (quantity, option, modifiers) => {
+    let unitPrice = 0;
+    unitPrice += option.price;
+    modifiers.forEach(modifier => {
+        unitPrice += modifier.price;
+    });
+    return unitPrice * quantity;
+}
+
+export default { initializeCart, setCart, getCartItems, getItemSubTotal };
