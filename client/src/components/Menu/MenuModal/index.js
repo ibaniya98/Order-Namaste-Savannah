@@ -5,6 +5,8 @@ import {
     Slider, InputNumber, Row, Col, Button, Checkbox
 } from 'antd';
 
+import CartUtil from '../../../util/cart';
+
 class MenuModal extends React.Component {
     constructor(props) {
         super(props);
@@ -16,15 +18,35 @@ class MenuModal extends React.Component {
         }
         this.addToCart = this.addToCart.bind(this);
         this.changeOption = this.changeOption.bind(this);
+        this.changeModifier = this.changeModifier.bind(this);
         this.changeNotes = this.changeNotes.bind(this);
         this.changeQuantity = this.changeQuantity.bind(this);
         this.getSelectedOption = this.getSelectedOption.bind(this);
+        this.getSelectedModifiers = this.getSelectedModifiers.bind(this);
+
     }
 
     changeOption(e) {
         this.setState({
             option: e.target.value
         });
+    }
+
+    changeModifier(modifiers) {
+        if (!this.props.item.modifiers.multiSelect) {
+            let previousModifiers = this.state.modifiers;
+
+            if (previousModifiers.length === 0) {
+                this.setState({ modifiers });
+            } else {
+                let previousModifier = previousModifiers[0];
+                this.setState({
+                    modifiers: modifiers.filter(x => x !== previousModifier)
+                });
+            }
+        } else {
+            this.setState({ modifiers });
+        }
     }
 
     changeNotes(e) {
@@ -44,6 +66,15 @@ class MenuModal extends React.Component {
         return options.filter(option => option._id === this.state.option)[0];
     }
 
+    getSelectedModifiers() {
+        let modifiers = this.props.item.modifiers;
+        if (modifiers && modifiers.values instanceof Array) {
+            return modifiers.values.filter(modifier => {
+                return this.state.modifiers.includes(modifier._id);
+            });
+        }
+        return [];
+    }
 
     addToCart() {
         if (!this.state.option) {
@@ -56,6 +87,7 @@ class MenuModal extends React.Component {
         let cartItem = {
             item: currentItem,
             selectedOption: this.getSelectedOption(),
+            selectedModifiers: this.getSelectedModifiers(),
             quantity: this.state.quantity,
             notes: this.state.notes,
             cartId: Date.now()
@@ -63,11 +95,41 @@ class MenuModal extends React.Component {
 
         try {
             this.props.addItem(cartItem);
+            console.log(cartItem);
             message.success(`Added ${currentItem.itemName} to the cart`);
         } catch (err) {
             message.error(`Failed to add ${currentItem.itemName} to the cart`);
         }
         this.props.hideModal();
+    }
+
+    getModifierComponent(modifiers) {
+        let component;
+
+        if (modifiers && modifiers.values.length > 0) {
+
+            component = (
+                <>
+                    <Divider orientation="left">Modifiers</Divider>
+                    {!modifiers.multiSelect && <p>*Please select only one option</p>}
+                    <Checkbox.Group onChange={this.changeModifier} className="d-flex flex-column align-items-start" value={this.state.modifiers}>
+                        {
+                            modifiers.values.map(option => {
+                                return (
+                                    <>
+                                        <Checkbox value={option._id} key={option._id}>
+                                            {option.title} $ {option.price}
+                                        </Checkbox>
+                                    </>
+                                )
+                            })
+                        }
+                    </Checkbox.Group>
+                </>
+            );
+        }
+
+        return component;
     }
 
     render() {
@@ -86,28 +148,8 @@ class MenuModal extends React.Component {
             )
         });
 
-        const modifiers = currentItem.modifiers;
-        let modifiersOptions;
-        if (modifiers && modifiers.values.length > 0) {
-            modifiersOptions = (
-                <>
-                    <Divider orientation="left">Modifiers</Divider>
-                    <Checkbox.Group>
-                        {
-                            modifiers.values.map(option => {
-                                return (
-                                    <Checkbox value={option._id} key={option._id}>
-                                        {option.title} $ {option.price}
-                                    </Checkbox>
-                                )
-                            })
-                        }
-                    </Checkbox.Group>
-                </>
-            );
-        }
-
-        let subTotal = this.state.quantity * this.getSelectedOption().price;
+        let modifiersOptions = this.getModifierComponent(currentItem.modifiers);
+        let subTotal = CartUtil.getItemSubTotal(this.state.quantity, this.getSelectedOption(), this.getSelectedModifiers());
 
         let addToCartText = (
             <div className="d-flex justify-content-around">
