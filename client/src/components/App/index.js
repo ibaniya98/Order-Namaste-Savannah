@@ -1,12 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import Navbar from '../Navbar';
 import MainContainer from '../MainContainer';
 import Preloader from '../Preloader/Primary';
+import Cart from '../Cart';
+
+
 import { Layout } from 'antd';
 
-import Cart from '../../util/cart';
+import CartUtil from '../../util/cart';
 import 'antd/dist/antd.css';
 import './styles.css';
 
@@ -31,7 +39,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Cart.initializeCart()
+    CartUtil.initializeCart()
       .then(cart => {
         this.props.initializeCart(cart);
         this.setState({ loading: false });
@@ -43,24 +51,29 @@ class App extends React.Component {
   }
 
   render() {
-    
+
     if (this.state.loading) {
       return <Preloader />;
     }
 
     return (
-      <Layout>
-        <Header style={{ backgroundColor: 'white' }}>
-          <Navbar />
-        </Header>
+      <Router>
+        <Layout>
+          <Header style={{ backgroundColor: 'white' }}>
+            <Navbar />
+          </Header>
 
-        <Content className="mt-5" style={{ minHeight: '100vh' }}>
-          <MainContainer />
-        </Content>
+          <Content className="mt-5" style={{ minHeight: '100vh' }}>
+            <Switch>
+              <Route exact path="/" component={MainContainer} />
+              <Route path="/cart" component={Cart} />
+            </Switch>
 
-        <Footer>Copyright</Footer>
-      </Layout >
+          </Content>
 
+          <Footer>Copyright</Footer>
+        </Layout >
+      </Router>
     );
   }
 

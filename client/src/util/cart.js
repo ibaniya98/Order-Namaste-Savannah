@@ -5,7 +5,7 @@ const STORAGE = window.localStorage;
 
 const isValidCart = () => {
     let cart = JSON.parse(STORAGE.getItem(STORAGE_NAME));
-    return !(cart === null || !cart instanceof Array);
+    return cart !== null && cart instanceof Array;
 }
 
 const initializeCart = async () => {
@@ -31,13 +31,21 @@ const setCart = (items) => {
     return items;
 }
 
-const getItemSubTotal = (quantity, option, modifiers) => {
+const getItemSubTotal = (cartItem) => {
+    const { quantity, selectedOption, selectedModifiers } = cartItem;
     let unitPrice = 0;
-    unitPrice += option.price;
-    modifiers.forEach(modifier => {
+    unitPrice += selectedOption.price;
+    selectedModifiers.forEach(modifier => {
         unitPrice += modifier.price;
     });
     return unitPrice * quantity;
 }
 
-export default { initializeCart, setCart, getCartItems, getItemSubTotal };
+const getCartSubtotal = (items) => {
+    return items.reduce((total, currentItem) => {
+        return total + getItemSubTotal(currentItem);
+    }, 0);
+}
+
+
+export default { initializeCart, setCart, getCartItems, getItemSubTotal, getCartSubtotal };

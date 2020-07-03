@@ -5,18 +5,20 @@ import {
     Slider, InputNumber, Row, Col, Button, Checkbox
 } from 'antd';
 
+import { v4 as uuid } from 'uuid';
 import CartUtil from '../../../util/cart';
 
 class MenuModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            option: this.props.item.options[0]._id,
-            modifiers: [],
-            quantity: 1,
-            notes: ""
+            option: props.selectedOptionId || props.item.options[0]._id,
+            modifiers: props.selectedModifiersId || [],
+            quantity: props.selectedQuantity || 1,
+            notes: props.notes || ""
         }
         this.addToCart = this.addToCart.bind(this);
+        this.updateCartItem = this.updateCartItem.bind(this);
         this.changeOption = this.changeOption.bind(this);
         this.changeModifier = this.changeModifier.bind(this);
         this.changeNotes = this.changeNotes.bind(this);
@@ -90,15 +92,40 @@ class MenuModal extends React.Component {
             selectedModifiers: this.getSelectedModifiers(),
             quantity: this.state.quantity,
             notes: this.state.notes,
-            cartId: Date.now()
+            cartId: uuid()
         }
 
         try {
             this.props.addItem(cartItem);
-            console.log(cartItem);
             message.success(`Added ${currentItem.itemName} to the cart`);
         } catch (err) {
             message.error(`Failed to add ${currentItem.itemName} to the cart`);
+        }
+        this.props.hideModal();
+    }
+
+    updateCartItem() {
+        if (!this.state.option) {
+            message.error("Please select an option");
+            return;
+        }
+
+        let currentItem = this.props.item;
+
+        let cartItem = {
+            item: currentItem,
+            selectedOption: this.getSelectedOption(),
+            selectedModifiers: this.getSelectedModifiers(),
+            quantity: this.state.quantity,
+            notes: this.state.notes,
+            cartId: this.props.cartId
+        }
+
+        try {
+            this.props.updateItem(cartItem);
+            message.success(`Updated ${currentItem.itemName} in the cart`);
+        } catch (err) {
+            message.error(`Failed to update ${currentItem.itemName} in the cart`);
         }
         this.props.hideModal();
     }
@@ -133,14 +160,16 @@ class MenuModal extends React.Component {
     }
 
     render() {
-        let currentItem = this.props.item;
+        const { item, isItemUpdate, visible, hideModal } = this.props;
+        const { option, quantity, notes } = this.state;
+
         const radioStyle = {
             display: 'block',
             height: '30px',
             lineHeight: '30px',
         };
 
-        let optionRadio = currentItem.options.map(option => {
+        let optionRadio = item.options.map(option => {
             return (
                 <Radio style={radioStyle} value={option._id} key={option._id}>
                     {option.title} $ {option.price}
@@ -148,13 +177,17 @@ class MenuModal extends React.Component {
             )
         });
 
-        let modifiersOptions = this.getModifierComponent(currentItem.modifiers);
-        let subTotal = CartUtil.getItemSubTotal(this.state.quantity, this.getSelectedOption(), this.getSelectedModifiers());
+        let modifiersOptions = this.getModifierComponent(item.modifiers);
+        let subTotal = CartUtil.getItemSubTotal({
+            quantity: quantity,
+            selectedOption: this.getSelectedOption(),
+            selectedModifiers: this.getSelectedModifiers()
+        });
 
-        let addToCartText = (
+        let actionButtonText = (
             <div className="d-flex justify-content-around">
                 <div>
-                    Add {this.state.quantity} to Cart
+                    {isItemUpdate ? "Update" : "Add"} {quantity} to Cart
                 </div>
                 <div>
                     ${subTotal.toFixed(2)}
@@ -163,20 +196,20 @@ class MenuModal extends React.Component {
         );
 
         return (
-            <Modal title={currentItem.itemName} visible={this.props.visible}
-                onCancel={this.props.hideModal} centered="true"
+            <Modal title={item.itemName} visible={visible}
+                onCancel={hideModal} centered="true"
                 footer={[
                     <Button key="submit" type="primary" size="large" shape="round"
                         style={{ minWidth: 250 }}
-                        onClick={this.addToCart}
+                        onClick={isItemUpdate ? this.updateCartItem : this.addToCart}
                     >
-                        {addToCartText}
+                        {actionButtonText}
                     </Button>,
                 ]}>
-                <p>{currentItem.description}</p>
+                <p>{item.description}</p>
                 <div>
                     <Divider orientation="left">Pick One</Divider>
-                    <Radio.Group onChange={this.changeOption} value={this.state.option} >
+                    <Radio.Group onChange={this.changeOption} value={option} >
                         {optionRadio}
                     </Radio.Group>
                 </div>
@@ -189,7 +222,7 @@ class MenuModal extends React.Component {
                                 min={1}
                                 max={10}
                                 onChange={this.changeQuantity}
-                                value={this.state.quantity}
+                                value={quantity}
                             />
                         </Col>
                         <Col span={4}>
@@ -197,7 +230,7 @@ class MenuModal extends React.Component {
                                 min={1}
                                 max={10}
                                 style={{ margin: '0 16px' }}
-                                value={this.state.quantity}
+                                value={quantity}
                                 onChange={this.changeQuantity}
                             />
                         </Col>
@@ -208,7 +241,7 @@ class MenuModal extends React.Component {
 
                 <div>
                     <Divider>Notes</Divider>
-                    <Input.TextArea value={this.state.notes}
+                    <Input.TextArea value={notes}
                         onChange={this.changeNotes}
                         placeholder="Add any special requests"
                         autoSize={{ minRows: 3, maxRows: 5 }} />
@@ -224,7 +257,13 @@ const mapDispatchToProps = (dispatch) => {
             return dispatch({
                 type: "add_item", item
             });
+        },
+        updateItem: function (item) {
+            return dispatch({
+                type: "update_item", item
+            })
         }
+
     }
 }
 
