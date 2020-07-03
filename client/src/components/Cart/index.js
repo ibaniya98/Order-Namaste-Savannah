@@ -99,7 +99,7 @@ class Cart extends React.Component {
                         selectedModifiersId={itemToModify.selectedModifiers.map(modifier => modifier._id)}
                         selectedQuantity={itemToModify.quantity}
                         notes={itemToModify.notes}
-                        item={itemToModify.item}
+                        menuItem={itemToModify.item}
                         isItemUpdate={true}
                         visible={true}
                         hideModal={this.hideModal}

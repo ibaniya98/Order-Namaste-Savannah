@@ -76,7 +76,7 @@ class Menu extends React.Component {
 
                 {
                     this.state.currentItem &&
-                    <MenuModal item={this.state.currentItem}
+                    <MenuModal menuItem={this.state.currentItem}
                         visible={this.state.visible} hideModal={this.hideModal}
                     />
                 }

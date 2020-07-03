@@ -12,20 +12,24 @@ class MenuModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            option: props.selectedOptionId || props.item.options[0]._id,
+            option: props.selectedOptionId || props.menuItem.options[0]._id,
             modifiers: props.selectedModifiersId || [],
             quantity: props.selectedQuantity || 1,
             notes: props.notes || ""
         }
+
         this.addToCart = this.addToCart.bind(this);
         this.updateCartItem = this.updateCartItem.bind(this);
+
         this.changeOption = this.changeOption.bind(this);
         this.changeModifier = this.changeModifier.bind(this);
         this.changeNotes = this.changeNotes.bind(this);
         this.changeQuantity = this.changeQuantity.bind(this);
+
         this.getSelectedOption = this.getSelectedOption.bind(this);
         this.getSelectedModifiers = this.getSelectedModifiers.bind(this);
-
+        this.getModifierComponent = this.getModifierComponent.bind(this);
+        this.getOptionsComponent = this.getOptionsComponent.bind(this);
     }
 
     changeOption(e) {
@@ -35,7 +39,7 @@ class MenuModal extends React.Component {
     }
 
     changeModifier(modifiers) {
-        if (!this.props.item.modifiers.multiSelect) {
+        if (!this.props.menuItem.modifiers.multiSelect) {
             let previousModifiers = this.state.modifiers;
 
             if (previousModifiers.length === 0) {
@@ -64,12 +68,12 @@ class MenuModal extends React.Component {
     }
 
     getSelectedOption() {
-        let options = this.props.item.options;
+        let options = this.props.menuItem.options;
         return options.filter(option => option._id === this.state.option)[0];
     }
 
     getSelectedModifiers() {
-        let modifiers = this.props.item.modifiers;
+        let modifiers = this.props.menuItem.modifiers;
         if (modifiers && modifiers.values instanceof Array) {
             return modifiers.values.filter(modifier => {
                 return this.state.modifiers.includes(modifier._id);
@@ -84,7 +88,7 @@ class MenuModal extends React.Component {
             return;
         }
 
-        let currentItem = this.props.item;
+        let currentItem = this.props.menuItem;
 
         let cartItem = {
             item: currentItem,
@@ -110,7 +114,7 @@ class MenuModal extends React.Component {
             return;
         }
 
-        let currentItem = this.props.item;
+        let currentItem = this.props.menuItem;
 
         let cartItem = {
             item: currentItem,
@@ -130,13 +134,14 @@ class MenuModal extends React.Component {
         this.props.hideModal();
     }
 
-    getModifierComponent(modifiers) {
+    getModifierComponent() {
+        const { modifiers } = this.props.menuItem;
         let component;
 
         if (modifiers && modifiers.values.length > 0) {
 
             component = (
-                <>
+                <div>
                     <Divider orientation="left">Modifiers</Divider>
                     {!modifiers.multiSelect && <p>*Please select only one option</p>}
                     <Checkbox.Group onChange={this.changeModifier} className="d-flex flex-column align-items-start" value={this.state.modifiers}>
@@ -152,16 +157,19 @@ class MenuModal extends React.Component {
                             })
                         }
                     </Checkbox.Group>
-                </>
+                </div>
             );
         }
 
         return component;
     }
 
-    render() {
-        const { item, isItemUpdate, visible, hideModal } = this.props;
-        const { option, quantity, notes } = this.state;
+    getOptionsComponent() {
+        const { options } = this.props.menuItem;
+        // Only have one option, no need to render the options
+        if (options.length === 1) {
+            return undefined;
+        }
 
         const radioStyle = {
             display: 'block',
@@ -169,16 +177,31 @@ class MenuModal extends React.Component {
             lineHeight: '30px',
         };
 
-        let optionRadio = item.options.map(option => {
-            return (
-                <Radio style={radioStyle} value={option._id} key={option._id}>
-                    {option.title} $ {option.price.toFixed(2)}
-                </Radio>
-            )
-        });
+        return (
+            <div>
+                <Divider orientation="left">Pick One</Divider>
+                <Radio.Group onChange={this.changeOption} value={this.state.option} >
+                    {
+                        options.map(option => {
+                            return (
+                                <Radio style={radioStyle} value={option._id} key={option._id}>
+                                    {option.title} $ {option.price.toFixed(2)}
+                                </Radio>
+                            )
+                        })
+                    }
+                </Radio.Group>
+            </div>
+        );
+    }
 
-        let modifiersOptions = this.getModifierComponent(item.modifiers);
-        let subTotal = CartUtil.getItemSubTotal({
+    render() {
+        const { menuItem, isItemUpdate, visible, hideModal } = this.props;
+        const { quantity, notes } = this.state;
+
+        const optionsComponent = this.getOptionsComponent();
+        const modifiersComponent = this.getModifierComponent();
+        const subTotal = CartUtil.getItemSubTotal({
             quantity: quantity,
             selectedOption: this.getSelectedOption(),
             selectedModifiers: this.getSelectedModifiers()
@@ -196,7 +219,7 @@ class MenuModal extends React.Component {
         );
 
         return (
-            <Modal title={item.itemName} visible={visible}
+            <Modal title={menuItem.itemName} visible={visible}
                 onCancel={hideModal} centered="true"
                 footer={[
                     <Button key="submit" type="primary" size="large" shape="round"
@@ -206,13 +229,8 @@ class MenuModal extends React.Component {
                         {actionButtonText}
                     </Button>,
                 ]}>
-                <p>{item.description}</p>
-                <div>
-                    <Divider orientation="left">Pick One</Divider>
-                    <Radio.Group onChange={this.changeOption} value={option} >
-                        {optionRadio}
-                    </Radio.Group>
-                </div>
+                <p>{menuItem.description}</p>
+                {optionsComponent}
 
                 <div>
                     <Divider orientation="left">Quantity</Divider>
@@ -237,10 +255,10 @@ class MenuModal extends React.Component {
                     </Row>
                 </div>
 
-                {modifiersOptions && (<div>{modifiersOptions}</div>)}
+                {modifiersComponent}
 
                 <div>
-                    <Divider>Notes</Divider>
+                    <Divider orientation="left">Notes</Divider>
                     <Input.TextArea value={notes}
                         onChange={this.changeNotes}
                         placeholder="Add any special requests"
