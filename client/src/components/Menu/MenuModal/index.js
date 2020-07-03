@@ -91,7 +91,7 @@ class MenuModal extends React.Component {
             selectedOption: this.getSelectedOption(),
             selectedModifiers: this.getSelectedModifiers(),
             quantity: this.state.quantity,
-            notes: this.state.notes,
+            notes: this.state.notes.trim(),
             cartId: uuid()
         }
 
