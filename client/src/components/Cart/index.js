@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { Pagination } from 'antd'
 import CartSummaryItem from './CartSummaryItem';
 import MenuModal from '../Menu/MenuModal';
 
@@ -28,10 +29,13 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            itemToModify: undefined
+            itemToModify: undefined,
+            currentPage: 1,
+            currentPageSize: 5
         }
         this.hideModal = this.hideModal.bind(this);
         this.showModal = this.showModal.bind(this);
+        this.changePage = this.changePage.bind(this);
     }
 
     hideModal() {
@@ -44,13 +48,23 @@ class Cart extends React.Component {
         this.setState({ itemToModify });
     }
 
+    changePage(page) {
+        this.setState({
+            currentPage: page
+        });
+        window.scrollTo(0, 0);
+    }
 
     render() {
         const { cart } = this.props;
+        const { currentPage, currentPageSize, itemToModify } = this.state;
 
         let content;
         if (cart.length > 0) {
-            content = cart.map(cartItem => {
+            const offset = (currentPage - 1) * currentPageSize;
+            let paginatedCartItems = cart.slice(offset, offset + currentPageSize);
+
+            content = paginatedCartItems.map(cartItem => {
                 return <CartSummaryItem cartItem={cartItem} isEditable key={cartItem.cartId}
                     showModal={this.showModal} removeItem={this.props.removeItem}
                 />
@@ -64,11 +78,19 @@ class Cart extends React.Component {
             );
         }
 
-        const { itemToModify } = this.state;
         return (
             <div className="container">
                 <h1>Cart Summary</h1>
                 <hr />
+                <div className="mx-auto">
+                    <Pagination size="small" total={cart.length}
+                        current={currentPage} pageSize={currentPageSize}
+                        hideOnSinglePage
+                        onChange={this.changePage}
+                        className="my-5 d-flex justify-content-center"
+                    />
+                </div>
+
                 {content}
 
                 {itemToModify &&
