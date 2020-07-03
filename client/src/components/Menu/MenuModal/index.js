@@ -145,7 +145,7 @@ class MenuModal extends React.Component {
                                 return (
                                     <>
                                         <Checkbox value={option._id} key={option._id}>
-                                            {option.title} $ {option.price}
+                                            {option.title} $ {option.price.toFixed(2)}
                                         </Checkbox>
                                     </>
                                 )
@@ -172,7 +172,7 @@ class MenuModal extends React.Component {
         let optionRadio = item.options.map(option => {
             return (
                 <Radio style={radioStyle} value={option._id} key={option._id}>
-                    {option.title} $ {option.price}
+                    {option.title} $ {option.price.toFixed(2)}
                 </Radio>
             )
         });
