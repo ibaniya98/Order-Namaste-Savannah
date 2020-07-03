@@ -6,6 +6,15 @@ import { Button } from 'antd';
 
 const IMAGE_PLACHOLDER = 'https://namaste-savannah-photos.s3.amazonaws.com/menu/placeholder.png';
 
+const ItemDescription = (props) => {
+    return (
+        <p>
+            <strong>{props.title}: </strong> <br />
+            {props.content}
+        </p>
+    )
+}
+
 const CartSummaryItem = (props) => {
     const { cartItem, isEditable, showModal, removeItem } = props;
     const basicItem = cartItem.item;
@@ -30,19 +39,17 @@ const CartSummaryItem = (props) => {
                         <p className="lead my-0">{basicItem.category}</p>
                         {basicItem.description && <p>{basicItem.description}</p>}
                         {
-                            cartItem.selectedOption.title && (
-                                <p>
-                                    <strong>Option: </strong> {cartItem.selectedOption.title}
-                                </p>
-                            )
+                            cartItem.selectedOption.title &&
+                            <ItemDescription title="Option" content={cartItem.selectedOption.title} />
                         }
                         {
-                            cartItem.selectedModifiers?.length > 0 && (
-                                <p>
-                                    <strong>Extra: </strong>
-                                    {cartItem.selectedModifiers.map(modifier => modifier.title).join(", ")}
-                                </p>
-                            )
+                            cartItem.selectedModifiers?.length > 0 &&
+                            <ItemDescription title="Extras"
+                                content={cartItem.selectedModifiers.map(modifier => modifier.title).join(", ")} />
+                        }
+                        {
+                            cartItem.notes?.trim().length > 0 &&
+                            <ItemDescription title="Notes" content={cartItem.notes.trim()} />
                         }
                     </div>
                     <div className="col-3 lead d-flex justify-content-end align-items-center">

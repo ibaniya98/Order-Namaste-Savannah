@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { Pagination } from 'antd'
+import CartStats from './CartStats';
 import CartSummaryItem from './CartSummaryItem';
 import MenuModal from '../Menu/MenuModal';
 
@@ -64,11 +65,24 @@ class Cart extends React.Component {
             const offset = (currentPage - 1) * currentPageSize;
             let paginatedCartItems = cart.slice(offset, offset + currentPageSize);
 
-            content = paginatedCartItems.map(cartItem => {
+            const cartItems = paginatedCartItems.map(cartItem => {
                 return <CartSummaryItem cartItem={cartItem} isEditable key={cartItem.cartId}
                     showModal={this.showModal} removeItem={this.props.removeItem}
                 />
-            })
+            });
+
+            content = (
+                <div>
+                    <CartStats cart={cart} />
+                    <Pagination size="small" total={cart.length}
+                        current={currentPage} pageSize={currentPageSize}
+                        hideOnSinglePage
+                        onChange={this.changePage}
+                        className="my-5 d-flex justify-content-center"
+                    />
+                    {cartItems}
+                </div>
+            );
         } else {
             content = (
                 <div>
@@ -82,14 +96,6 @@ class Cart extends React.Component {
             <div className="container">
                 <h1>Cart Summary</h1>
                 <hr />
-                <div className="mx-auto">
-                    <Pagination size="small" total={cart.length}
-                        current={currentPage} pageSize={currentPageSize}
-                        hideOnSinglePage
-                        onChange={this.changePage}
-                        className="my-5 d-flex justify-content-center"
-                    />
-                </div>
 
                 {content}
 
@@ -99,7 +105,7 @@ class Cart extends React.Component {
                         selectedModifiersId={itemToModify.selectedModifiers.map(modifier => modifier._id)}
                         selectedQuantity={itemToModify.quantity}
                         notes={itemToModify.notes}
-                        item={itemToModify.item}
+                        menuItem={itemToModify.item}
                         isItemUpdate={true}
                         visible={true}
                         hideModal={this.hideModal}

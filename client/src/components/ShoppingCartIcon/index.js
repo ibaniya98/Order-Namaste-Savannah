@@ -5,6 +5,8 @@ import { Badge } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import CartDrawer from '../CartDrawer';
 
+import CartUtil from '../../util/cart';
+
 const mapStateToProps = (state) => {
     return {
         cart: state.cart
@@ -32,9 +34,7 @@ class ShoppingCart extends React.Component {
 
     render() {
         const { cart } = this.props;
-        const totalItems = cart.reduce((total, item) => {
-            return total + item.quantity
-        }, 0);
+        const totalItems = CartUtil.getCartItemsCount(cart);
 
         return (
             <>
