@@ -47,5 +47,11 @@ const getCartSubtotal = (items) => {
     }, 0);
 }
 
+const getCartItemsCount = (items) => {
+    return items.reduce((total, item) => {
+        return total + item.quantity
+    }, 0);
+}
 
-export default { initializeCart, setCart, getCartItems, getItemSubTotal, getCartSubtotal };
+
+export default { initializeCart, setCart, getCartItems, getItemSubTotal, getCartSubtotal, getCartItemsCount };
