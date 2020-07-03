@@ -9,7 +9,7 @@ import CartUtil from '../../util/cart';
 
 const mapStateToProps = (state) => {
     return {
-        cartItems: state.cart
+        cartItems: state.cart.items
     }
 }
 
