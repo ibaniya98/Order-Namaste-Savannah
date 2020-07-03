@@ -9,7 +9,7 @@ import CartUtil from '../../util/cart';
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart
+        cartItems: state.cart.items
     }
 }
 
@@ -33,8 +33,8 @@ class ShoppingCart extends React.Component {
     }
 
     render() {
-        const { cart } = this.props;
-        const totalItems = CartUtil.getCartItemsCount(cart);
+        const { cartItems } = this.props;
+        const totalItems = CartUtil.getCartItemsCount(cartItems);
 
         return (
             <>

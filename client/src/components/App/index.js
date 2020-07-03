@@ -22,9 +22,9 @@ const { Header, Content, Footer } = Layout;
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    initializeCart: function (cart) {
+    initializeCart: function (items) {
       return dispatch({
-        type: "initialize_cart", cart
+        type: "initialize_cart", items
       });
     }
   }

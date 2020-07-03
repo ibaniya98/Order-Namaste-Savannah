@@ -9,7 +9,7 @@ import MenuModal from '../Menu/MenuModal';
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart
+        cartItems: state.cart.items
     }
 }
 
@@ -53,19 +53,18 @@ class Cart extends React.Component {
         this.setState({
             currentPage: page
         });
-        window.scrollTo(0, 0);
     }
 
     render() {
-        const { cart } = this.props;
+        const { cartItems } = this.props;
         const { currentPage, currentPageSize, itemToModify } = this.state;
 
         let content;
-        if (cart.length > 0) {
+        if (cartItems.length > 0) {
             const offset = (currentPage - 1) * currentPageSize;
-            let paginatedCartItems = cart.slice(offset, offset + currentPageSize);
+            let paginatedCartItems = cartItems.slice(offset, offset + currentPageSize);
 
-            const cartItems = paginatedCartItems.map(cartItem => {
+            const itemsToDisplay = paginatedCartItems.map(cartItem => {
                 return <CartSummaryItem cartItem={cartItem} isEditable key={cartItem.cartId}
                     showModal={this.showModal} removeItem={this.props.removeItem}
                 />
@@ -73,14 +72,14 @@ class Cart extends React.Component {
 
             content = (
                 <div>
-                    <CartStats cart={cart} />
-                    <Pagination size="small" total={cart.length}
+                    <CartStats cartItems={cartItems} />
+                    <Pagination size="small" total={cartItems.length}
                         current={currentPage} pageSize={currentPageSize}
                         hideOnSinglePage
                         onChange={this.changePage}
                         className="my-5 d-flex justify-content-center"
                     />
-                    {cartItems}
+                    {itemsToDisplay}
                 </div>
             );
         } else {
