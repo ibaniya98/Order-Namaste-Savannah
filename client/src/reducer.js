@@ -19,8 +19,12 @@ function customReducer(state, action) {
         case "add_item":
             newState.cart.push(action.item);
             break;
-        case "delete_item":
-            newState.cart = action.cart.filter(item => item._id !== action.item._id);
+        case "update_item":
+            const itemIndex = newState.cart.findIndex((item) => item.cartId === action.item.cartId);
+            newState.cart[itemIndex] = action.item;
+            break;
+        case "remove_item":
+            newState.cart = newState.cart.filter(item => item.cartId !== action.item.cartId);
             break;
         default:
     }
