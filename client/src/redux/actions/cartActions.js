@@ -46,6 +46,7 @@ export const updateCartItem = (cartItem) => (dispatch) => {
     let existingCartItems = getCartItems();
     const itemIndex = existingCartItems.findIndex((item) => item.cartId === cartItem.cartId);
     existingCartItems[itemIndex] = cartItem;
+    saveCartItems(existingCartItems);
 
     dispatch({
         type: UPDATE_ITEM,
