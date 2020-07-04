@@ -6,53 +6,27 @@ import {
   Route
 } from "react-router-dom";
 
+import { initializeCart } from '../../redux/actions/cartActions';
+
 import Navbar from '../Navbar';
 import MainContainer from '../MainContainer';
 import Preloader from '../Preloader/Primary';
 import Cart from '../Cart';
 
-
 import { Layout } from 'antd';
 
-import CartUtil from '../../util/cart';
 import 'antd/dist/antd.css';
 import './styles.css';
 
 const { Header, Content, Footer } = Layout;
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    initializeCart: function (items) {
-      return dispatch({
-        type: "initialize_cart", items
-      });
-    }
-  }
-}
-
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true
-    }
-  }
-
   componentDidMount() {
-    CartUtil.initializeCart()
-      .then(cart => {
-        this.props.initializeCart(cart);
-        this.setState({ loading: false });
-      })
-      .catch(err => {
-        this.props.initializeCart([]);
-        this.setState({ loading: false });
-      });
+    this.props.initializeCart();
   }
 
   render() {
-
-    if (this.state.loading) {
+    if (this.props.loading) {
       return <Preloader />;
     }
 
@@ -76,7 +50,12 @@ class App extends React.Component {
       </Router>
     );
   }
-
 }
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = (state) => {
+  return {
+    loading: state.cart.loading
+  };
+}
+
+export default connect(mapStateToProps, { initializeCart })(App);

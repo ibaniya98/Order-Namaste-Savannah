@@ -5,6 +5,8 @@ import {
     Slider, InputNumber, Row, Col, Button, Checkbox
 } from 'antd';
 
+import { addItemToCart, updateCartItem } from '../../../redux/actions/cartActions'
+
 import { v4 as uuid } from 'uuid';
 import CartUtil from '../../../util/cart';
 
@@ -100,7 +102,7 @@ class MenuModal extends React.Component {
         }
 
         try {
-            this.props.addItem(cartItem);
+            this.props.addItemToCart(cartItem);
             message.success(`Added ${currentItem.itemName} to the cart`);
         } catch (err) {
             message.error(`Failed to add ${currentItem.itemName} to the cart`);
@@ -126,7 +128,7 @@ class MenuModal extends React.Component {
         }
 
         try {
-            this.props.updateItem(cartItem);
+            this.props.updateCartItem(cartItem);
             message.success(`Updated ${currentItem.itemName} in the cart`);
         } catch (err) {
             message.error(`Failed to update ${currentItem.itemName} in the cart`);
@@ -269,20 +271,4 @@ class MenuModal extends React.Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addItem: function (item) {
-            return dispatch({
-                type: "add_item", item
-            });
-        },
-        updateItem: function (item) {
-            return dispatch({
-                type: "update_item", item
-            })
-        }
-
-    }
-}
-
-export default connect(null, mapDispatchToProps)(MenuModal);
+export default connect(null, { addItemToCart, updateCartItem })(MenuModal);
