@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { removeItemFromCart } from '../../redux/actions/cartActions';
+
 import { Drawer, Result, Button } from 'antd';
 import CartDrawerItem from './CartDrawerItem';
 
@@ -13,16 +15,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        removeItem: function (item) {
-            return dispatch({
-                type: "remove_item", item
-            });
-        }
-    }
-}
-
 class CartDrawer extends React.Component {
     constructor(props) {
         super(props);
@@ -31,7 +23,7 @@ class CartDrawer extends React.Component {
     }
 
     getCartDrawerItems() {
-        const { cartItems, removeItem } = this.props;
+        const { cartItems, removeItemFromCart } = this.props;
 
         if (cartItems.length === 0) {
             return <Result
@@ -45,7 +37,8 @@ class CartDrawer extends React.Component {
                 <>
                     {
                         cartItems.map(cartItem => {
-                            return <CartDrawerItem cartItem={cartItem} key={cartItem.cartId} removeItem={removeItem} />
+                            return <CartDrawerItem cartItem={cartItem} key={cartItem.cartId}
+                                removeItem={removeItemFromCart} />
                         })
                     }
                 </>
@@ -99,5 +92,5 @@ class CartDrawer extends React.Component {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartDrawer);
+export default connect(mapStateToProps, { removeItemFromCart })(CartDrawer);
 

@@ -2,29 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { removeItemFromCart } from '../../redux/actions/cartActions';
+
 import { Pagination } from 'antd'
 import CartStats from './CartStats';
 import CartSummaryItem from './CartSummaryItem';
 import MenuModal from '../Menu/MenuModal';
-
-const mapStateToProps = (state) => {
-    return {
-        cartItems: state.cart.items
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        clearCart: function () {
-            return dispatch({ type: "clear_cart" });
-        },
-        removeItem: function (item) {
-            return dispatch({
-                type: "remove_item", item
-            })
-        }
-    }
-}
 
 class Cart extends React.Component {
     constructor(props) {
@@ -66,7 +49,7 @@ class Cart extends React.Component {
 
             const itemsToDisplay = paginatedCartItems.map(cartItem => {
                 return <CartSummaryItem cartItem={cartItem} isEditable key={cartItem.cartId}
-                    showModal={this.showModal} removeItem={this.props.removeItem}
+                    showModal={this.showModal} removeItem={this.props.removeItemFromCart}
                 />
             });
 
@@ -117,5 +100,12 @@ class Cart extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+
+const mapStateToProps = (state) => {
+    return {
+        cartItems: state.cart.items
+    }
+}
+
+export default connect(mapStateToProps, { removeItemFromCart })(Cart);
 
