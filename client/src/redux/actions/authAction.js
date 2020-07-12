@@ -3,6 +3,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
 export const REGISTRATION_FAILURE = 'REGISTRATION_FAILURE';
 export const LOGOUT = 'LOGOUT';
+export const AUTHENTICATING = 'AUTHENTICATING';
 
 const STORAGE_NAME = 'namaste-auth';
 
@@ -15,6 +16,8 @@ const saveAuthToken = (token) => {
 }
 
 export const login = ({ email, password }) => dispatch => {
+    dispatch({ type: AUTHENTICATING });
+
     const loginData = JSON.stringify({ email, password });
     fetch('/auth/login', {
         method: 'POST',
@@ -36,6 +39,8 @@ export const login = ({ email, password }) => dispatch => {
 }
 
 export const register = (registationData) => dispatch => {
+    dispatch({ type: AUTHENTICATING });
+
     // TODO - Determine what data to store about the customer
     const data = JSON.stringify(registationData);
 

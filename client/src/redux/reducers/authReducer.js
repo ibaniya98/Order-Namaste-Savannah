@@ -1,13 +1,15 @@
 import {
     LOGIN_SUCCESS, LOGIN_FAILURE,
     REGISTRATION_SUCCESS, REGISTRATION_FAILURE,
-    LOGOUT
+    LOGOUT,
+    AUTHENTICATING
 } from '../actions/authAction';
 
 const initialState = {
     authToken: localStorage.getItem('authToken'),
     isAuthenticated: false,
-    currentUser: null
+    currentUser: null,
+    isAuthenticating: false
 }
 
 export default function (state = initialState, action) {
@@ -17,6 +19,7 @@ export default function (state = initialState, action) {
             const { token, user } = action.payload;
             return {
                 ...state,
+                isAuthenticating: false,
                 isAuthenticated: true,
                 authToken: token,
                 currentUser: user
@@ -26,9 +29,15 @@ export default function (state = initialState, action) {
         case LOGOUT:
             return {
                 ...state,
+                isAuthenticating: false,
                 isAuthenticated: false,
                 authToken: '',
                 currentUser: null
+            }
+        case AUTHENTICATING:
+            return {
+                ...state,
+                isAuthenticating: true
             }
         default:
             return { ...state };
