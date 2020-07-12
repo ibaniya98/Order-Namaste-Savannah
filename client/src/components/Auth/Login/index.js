@@ -20,7 +20,7 @@ class Login extends React.Component {
                 <hr />
 
                 <Form name="normal_login" className="login-form"
-                    onFinish={this.onLogin}
+                    onFinish={this.onLogin} size="large"
                 >
                     <Form.Item
                         name="email"

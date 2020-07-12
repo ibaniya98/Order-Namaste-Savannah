@@ -38,11 +38,10 @@ export const login = ({ email, password }) => dispatch => {
         });
 }
 
-export const register = (registationData) => dispatch => {
+export const register = ({ email, password }) => dispatch => {
     dispatch({ type: AUTHENTICATING });
 
-    // TODO - Determine what data to store about the customer
-    const data = JSON.stringify(registationData);
+    const data = JSON.stringify({ email, password });
 
     fetch('/auth/register', {
         method: 'POST',
