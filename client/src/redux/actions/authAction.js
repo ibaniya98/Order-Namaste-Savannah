@@ -61,7 +61,7 @@ export const register = ({ email, password }) => dispatch => {
         });
 }
 
-export const logout = (dispatch) => {
+export const logout = () => dispatch => {
     saveAuthToken('');
     dispatch({
         type: LOGOUT
