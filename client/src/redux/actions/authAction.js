@@ -5,7 +5,7 @@ export const REGISTRATION_FAILURE = 'REGISTRATION_FAILURE';
 export const LOGOUT = 'LOGOUT';
 export const AUTHENTICATING = 'AUTHENTICATING';
 
-const STORAGE_NAME = 'namaste-auth';
+const STORAGE_NAME = 'namaste-auth-token';
 
 export const getAuthToken = () => {
     return localStorage.getItem(STORAGE_NAME);
@@ -18,10 +18,10 @@ const saveAuthToken = (token) => {
 export const login = ({ email, password }) => dispatch => {
     dispatch({ type: AUTHENTICATING });
 
-    const loginData = JSON.stringify({ email, password });
-    fetch('/auth/login', {
+    fetch('/api/auth/login', {
         method: 'POST',
-        data: loginData
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
         .then(json => {
             saveAuthToken(json.token);
@@ -41,11 +41,10 @@ export const login = ({ email, password }) => dispatch => {
 export const register = ({ email, password }) => dispatch => {
     dispatch({ type: AUTHENTICATING });
 
-    const data = JSON.stringify({ email, password });
-
-    fetch('/auth/register', {
+    fetch('/api/auth/register', {
         method: 'POST',
-        data
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
         .then(json => {
             saveAuthToken(json.token);

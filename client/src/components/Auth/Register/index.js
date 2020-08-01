@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
 import { Form, Input, Button } from 'antd';
 
 import { register } from '../../../redux/actions/authAction';
@@ -36,6 +38,10 @@ class Register extends React.Component {
     };
 
     render() {
+        if (this.props.isAuthenticated) {
+            return <Redirect to="/" />
+        }
+
         return (
             <div className="container" id="register">
                 <h1 className="display-3 text-center">Register</h1>
@@ -103,7 +109,10 @@ class Register extends React.Component {
                     </Form.Item>
 
                     <Form.Item {...tailFormItemLayout}>
-                        <Button type="primary" htmlType="submit" className="registration-form-button">
+                        <Button type="primary" htmlType="submit"
+                            className="registration-form-button"
+                            loading={this.props.isAuthenticating}
+                        >
                             Register
                          </Button>
                     </Form.Item>
