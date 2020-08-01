@@ -21,11 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true })).use(bodyParser.json());
 app.use(express.json({ extended: false }));
 app.use(helmet());
 app.use(cors());
+app.use(require('./passport').passport.initialize());
 
 // <<<<<<<<<<< Routes >>>>>>>>>>>>
-app.get('/api/:text', (req, res) => {
-    res.send({ 'message': `Hello ${req.params.text}` });
-});
+const routes = require('./routes')
+app.use('/api', routes);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

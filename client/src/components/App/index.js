@@ -7,11 +7,13 @@ import {
 } from "react-router-dom";
 
 import { initializeCart } from '../../redux/actions/cartActions';
+import { validateAuthToken } from '../../redux/actions/authAction';
 
 import Navbar from '../Navbar';
 import MainContainer from '../MainContainer';
 import Preloader from '../Preloader/Primary';
 import Cart from '../Cart';
+import AuthRoute from '../Auth';
 
 import { Layout } from 'antd';
 
@@ -23,6 +25,7 @@ const { Header, Content, Footer } = Layout;
 class App extends React.Component {
   componentDidMount() {
     this.props.initializeCart();
+    this.props.validateAuthToken();
   }
 
   render() {
@@ -41,6 +44,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={MainContainer} />
               <Route path="/cart" component={Cart} />
+              <AuthRoute />
             </Switch>
 
           </Content>
@@ -58,4 +62,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { initializeCart })(App);
+export default connect(mapStateToProps, { initializeCart, validateAuthToken })(App);

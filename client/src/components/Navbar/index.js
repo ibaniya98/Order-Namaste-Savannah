@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { UserOutlined } from '@ant-design/icons';
 import ShoppingCartIcon from '../ShoppingCartIcon';
+import ProfileIcon from '../Profile/ProfileIcon';
 
 const Navbar = () => {
     return (
@@ -12,7 +12,7 @@ const Navbar = () => {
             </div>
 
             <div style={{ fontSize: 24 }} >
-                <UserOutlined className="mx-3" />
+                <ProfileIcon />
                 <ShoppingCartIcon />
             </div>
         </div>
