@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import { initializeCart } from '../../redux/actions/cartActions';
+import { validateAuthToken } from '../../redux/actions/authAction';
 
 import Navbar from '../Navbar';
 import MainContainer from '../MainContainer';
@@ -24,6 +25,7 @@ const { Header, Content, Footer } = Layout;
 class App extends React.Component {
   componentDidMount() {
     this.props.initializeCart();
+    this.props.validateAuthToken();
   }
 
   render() {
@@ -60,4 +62,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { initializeCart })(App);
+export default connect(mapStateToProps, { initializeCart, validateAuthToken })(App);

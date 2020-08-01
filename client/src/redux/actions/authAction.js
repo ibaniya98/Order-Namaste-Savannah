@@ -67,3 +67,32 @@ export const logout = (dispatch) => {
         type: LOGOUT
     })
 }
+
+export const validateAuthToken = () => dispatch => {
+    const token = getAuthToken();
+    if (token) {
+        dispatch({ type: AUTHENTICATING });
+
+        fetch('/api/auth/validate', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        }).then(res => res.json())
+            .then(json => {
+                json.token = token;
+                dispatch({
+                    type: LOGIN_SUCCESS,
+                    payload: json
+                });
+            })
+            .catch(err => {
+                saveAuthToken('');
+                dispatch({
+                    type: LOGIN_FAILURE
+                });
+            });
+
+    }
+}

@@ -17,4 +17,12 @@ router.post('/register', (req, res, next) => {
     next();
 }, passportMiddleware.register, passportMiddleware.signJWT);
 
+router.get('/validate', passportMiddleware.authenticate, (req, res) => {
+    if (req.user) {
+        return res.status(200).json({ user: req.user });
+    }
+
+    return res.status(401).send("Unauthorized");
+});
+
 module.exports = router;
