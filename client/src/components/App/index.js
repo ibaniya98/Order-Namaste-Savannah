@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import { initializeCart } from '../../redux/actions/cartActions';
@@ -43,7 +44,7 @@ class App extends React.Component {
           <Content className="mt-5" style={{ minHeight: '100vh' }}>
             <Switch>
               <Route exact path="/" component={MainContainer} />
-              <Route path="/cart" component={Cart} />
+              <Route exact path="/cart" component={Cart} />
               <AuthRoute />
             </Switch>
 
