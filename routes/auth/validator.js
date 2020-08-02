@@ -14,7 +14,7 @@ const schema = new PasswordValidator()
 const decodePasswordError = (error) => {
     switch (error) {
         case "min": return `The password must be at least ${MIN_LENGTH} characters long`;
-        case "max": return `The password must be at monst ${MAX_LENGTH} characters long`;
+        case "max": return `The password must be at most ${MAX_LENGTH} characters long`;
         case "uppercase": return "The password must have at least one uppercase character";
         case "lowercase": return "The password must have at least one lowercase character";
         case "digits": return "The password must have at least one digit";

@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 
 import { register } from '../../../redux/actions/authAction';
+import { emailValidationRules, passwordValidationRules } from './rules';
 
 import './styles.css';
 
@@ -49,32 +50,12 @@ const Register = (props) => {
                 className="registration-form"
                 size="large"
             >
-                <Form.Item
-                    name="email"
-                    label="E-mail"
-                    rules={[
-                        {
-                            type: 'email',
-                            message: 'The input is not valid E-mail!',
-                        },
-                        {
-                            required: true,
-                            message: 'Please input your E-mail!',
-                        },
-                    ]}
-                >
+                <Form.Item name="email" label="E-mail" rules={emailValidationRules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item
-                    name="password"
-                    label="Password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your password!',
-                        },
-                    ]}
+                <Form.Item name="password"
+                    label="Password" rules={passwordValidationRules}
                     hasFeedback
                 >
                     <Input.Password />

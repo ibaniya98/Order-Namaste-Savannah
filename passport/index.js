@@ -47,10 +47,10 @@ const register = (req, res, next) => {
 const signIn = (req, res, next) => {
     passport.authenticate('local', { session: false }, (err, user, info) => {
         if (err) {
-            return res.status(500).json({ "message": "Failed to login" });
+            return res.status(500).json({ "error": "Failed to login" });
         }
         if (!user) {
-            return res.status(401).json({ "message": "Invalid credentials" });
+            return res.status(401).json({ "error": "Invalid credentials" });
         }
         req.user = user;
         next();

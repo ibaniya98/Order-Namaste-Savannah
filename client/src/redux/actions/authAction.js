@@ -61,20 +61,26 @@ export const register = ({ email, password }) => dispatch => {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' }
-    }).then(res => res.json())
-        .then(json => {
+    }).then(res => res.json()).then(json => {
+        if (json.token) {
             saveAuthToken(json.token);
             dispatch({
                 type: REGISTRATION_SUCCESS,
                 payload: json
             })
-        })
-        .catch(err => {
-            clearAuthToken();
-            dispatch({
-                type: REGISTRATION_FAILURE
-            })
+        } else {
+            throw json.error;
+        }
+    }).catch(err => {
+        clearAuthToken();
+        dispatch({
+            type: REGISTRATION_FAILURE
         });
+        notification.error({
+            message: "Registration Failure",
+            description: JSON.stringify(err),
+        });
+    });
 }
 
 export const logout = () => dispatch => {
