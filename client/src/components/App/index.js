@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.props.cartLoading || this.props.isAuthenticating) {
+    if (this.props.cartLoading) {
       return <Preloader />;
     }
 
