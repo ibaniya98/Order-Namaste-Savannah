@@ -42,6 +42,11 @@ export const login = ({ email, password }) => dispatch => {
             type: LOGIN_SUCCESS,
             payload: json
         });
+        notification.success({
+            message: "Welcome back",
+            description: "You have succesfully logged in",
+            placement: "bottomRight"
+        })
     }).catch(err => {
         notification.error({
             message: "Login Failure",
@@ -67,7 +72,12 @@ export const register = ({ email, password }) => dispatch => {
             dispatch({
                 type: REGISTRATION_SUCCESS,
                 payload: json
-            })
+            });
+            notification.success({
+                message: "Welcome!",
+                description: "Explore our tasty menu and order for pickup",
+                placement: "bottomRight"
+            });
         } else {
             throw json.error;
         }
@@ -89,7 +99,8 @@ export const logout = () => dispatch => {
         type: LOGOUT
     });
     notification.success({
-        message: "Succesfully logged out"
+        message: "Succesfully logged out",
+        placement: "bottomRight"
     });
 }
 
