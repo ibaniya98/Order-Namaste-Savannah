@@ -8,7 +8,7 @@ import { logout } from "../../../redux/actions/authAction";
 const Logout = (props) => {
     React.useEffect(() => {
         props.logout();
-    }, [])
+    }, [props])
 
     if (!props.isAuthenticated) {
         return <Redirect to="/" />

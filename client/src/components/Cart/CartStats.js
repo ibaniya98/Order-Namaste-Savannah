@@ -12,9 +12,10 @@ const CartStats = (props) => {
     const estimatedTax = cartSubtotal * TAX_RATE;
     const total = cartSubtotal + estimatedTax;
     const taxRateDisplay = `Est. Tax (${(TAX_RATE * 100).toFixed(2)} %)`;
+
     return (
         <div className="row p-1 mt-2">
-            <div class="col-12 col-lg-4 d-flex justify-content-center mb-2">
+            <div className="col-12 col-lg-4 d-flex justify-content-center mb-2">
                 <Statistic title="Total Items" value={CartUtil.getCartItemsCount(cartItems)}
                     valueStyle={{ textAlign: "center" }}
                 />
