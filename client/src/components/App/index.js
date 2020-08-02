@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 
 import { initializeCart } from '../../redux/actions/cartActions';
@@ -30,7 +29,7 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.props.loading) {
+    if (this.props.cartLoading) {
       return <Preloader />;
     }
 
@@ -59,7 +58,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    loading: state.cart.loading
+    cartLoading: state.cart.loading,
+    isAuthenticating: state.auth.isAuthenticating
   };
 }
 

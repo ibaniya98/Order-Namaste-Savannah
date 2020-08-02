@@ -1,3 +1,5 @@
+import { notification } from 'antd';
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
@@ -15,6 +17,11 @@ const saveAuthToken = (token) => {
     localStorage.setItem(STORAGE_NAME, token);
 }
 
+const clearAuthToken = () => {
+    localStorage.removeItem(STORAGE_NAME);
+    sessionStorage.removeItem(STORAGE_NAME);
+}
+
 export const login = ({ email, password }) => dispatch => {
     dispatch({ type: AUTHENTICATING });
 
@@ -22,20 +29,34 @@ export const login = ({ email, password }) => dispatch => {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' }
-    }).then(res => res.json())
-        .then(json => {
-            saveAuthToken(json.token);
-            dispatch({
-                type: LOGIN_SUCCESS,
-                payload: json
-            });
-        })
-        .catch(err => {
-            saveAuthToken('');
-            dispatch({
-                type: LOGIN_FAILURE
-            })
+    }).then(res => {
+        if (res.status === 200) {
+            return res.json();
+        } else if (res.status === 401) {
+            throw 'The email or password you have entered is incorrect';
+        }
+        throw 'Could not login. Please try again later';
+    }).then(json => {
+        saveAuthToken(json.token);
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: json
         });
+        notification.success({
+            message: "Welcome back",
+            description: "You have succesfully logged in",
+            placement: "bottomRight"
+        })
+    }).catch(err => {
+        notification.error({
+            message: "Login Failure",
+            description: err,
+        });
+        clearAuthToken();
+        dispatch({
+            type: LOGIN_FAILURE
+        })
+    });
 }
 
 export const register = ({ email, password }) => dispatch => {
@@ -45,27 +66,42 @@ export const register = ({ email, password }) => dispatch => {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' }
-    }).then(res => res.json())
-        .then(json => {
+    }).then(res => res.json()).then(json => {
+        if (json.token) {
             saveAuthToken(json.token);
             dispatch({
                 type: REGISTRATION_SUCCESS,
                 payload: json
-            })
-        })
-        .catch(err => {
-            saveAuthToken('');
-            dispatch({
-                type: REGISTRATION_FAILURE
-            })
+            });
+            notification.success({
+                message: "Welcome!",
+                description: "Explore our tasty menu and order for pickup",
+                placement: "bottomRight"
+            });
+        } else {
+            throw json.error;
+        }
+    }).catch(err => {
+        clearAuthToken();
+        dispatch({
+            type: REGISTRATION_FAILURE
         });
+        notification.error({
+            message: "Registration Failure",
+            description: JSON.stringify(err),
+        });
+    });
 }
 
 export const logout = () => dispatch => {
-    saveAuthToken('');
+    clearAuthToken();
     dispatch({
         type: LOGOUT
-    })
+    });
+    notification.success({
+        message: "Succesfully logged out",
+        placement: "bottomRight"
+    });
 }
 
 export const validateAuthToken = () => dispatch => {
